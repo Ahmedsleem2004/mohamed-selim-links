@@ -1,2 +1,285 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&display=swap');
-:root{color-scheme:dark;font-family:'Cairo',sans-serif}*{box-sizing:border-box}body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 85% 0%,#19352c 0%,transparent 40%),radial-gradient(ellipse at 0% 100%,#2c1a0a 0%,transparent 45%),#080d12;color:#fff;display:grid;place-items:center;padding:28px 18px}.panel{width:min(100%,440px);text-align:center;padding:35px 22px 25px;border:1px solid #ffffff23;border-radius:28px;background:#ffffff08;box-shadow:0 25px 80px #0008;backdrop-filter:blur(8px)}.avatar{display:block;width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:50% 33%;margin:0 auto 18px;border:3px solid #a4e34a;box-shadow:0 8px 30px #00cc6533}h1{font-size:24px;line-height:1.45;margin:0;font-weight:800}.role{color:#bdc8c6;font-size:14px;margin:6px 0 27px;font-weight:700}.links{display:grid;gap:13px}.links a{color:#fff;text-decoration:none;display:flex;align-items:center;gap:15px;border:1px solid #ffffff25;border-radius:16px;padding:14px 16px;background:#ffffff0b;transition:transform .2s,border-color .2s,background .2s}.links a:hover,.links a:focus-visible{transform:translateY(-2px);border-color:#a4e34a;background:#ffffff16}.info{text-align:left;flex:1;min-width:0}.info strong{display:block;font-size:16px;font-weight:800}.info small{color:#a8b7b4;font-size:12px;display:block;font-weight:600}.symbol{display:grid;place-items:center;width:43px;height:43px;flex:0 0 43px;border-radius:13px;background:#ffffff14}.symbol svg{width:25px;height:25px}.fb .symbol{color:#6da9ff}.ig .symbol{color:#ff84ba}.web .symbol{color:#9ce64a}.wa .symbol{color:#5cf29b}.arrow{font-size:20px;color:#84918f}footer{font-size:11px;color:#899c96;margin-top:25px}.links a:focus-visible{outline:2px solid #a4e34a;outline-offset:3px}@media(max-width:360px){.panel{padding:28px 15px}.info strong{font-size:15px}h1{font-size:21px}}
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  font-family: 'Cairo', sans-serif;
+  color: #ffffff;
+  background: #080b10;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(35, 93, 74, 0.2),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      rgba(255, 126, 30, 0.07),
+      transparent 50%
+    ),
+    #080b10;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.panel {
+  width: 100%;
+  max-width: 460px;
+  padding: 38px 26px 22px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(
+      155deg,
+      rgba(255, 255, 255, 0.045),
+      transparent 45%
+    ),
+    #11161d;
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+/* Profile */
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-frame {
+  width: 126px;
+  height: 126px;
+  padding: 4px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #a7ff28,
+    #18bf62 55%,
+    #ff8b24
+  );
+  box-shadow: 0 0 32px rgba(102, 226, 64, 0.15);
+}
+
+.avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 27%;
+  border-radius: 50%;
+  border: 3px solid #11161d;
+}
+
+h1 {
+  margin: 20px 0 0;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+}
+
+.role {
+  margin: 3px 0 26px;
+  color: #a9b5c0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Links */
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 78px;
+  padding: 14px 17px;
+  border-radius: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.035);
+  color: #ffffff;
+  text-decoration: none;
+  text-align: left;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.link-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.065);
+  border-color: rgba(167, 255, 40, 0.35);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.link-card:focus-visible {
+  outline: 2px solid #a7ff28;
+  outline-offset: 3px;
+}
+
+/* Icons */
+
+.symbol {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+}
+
+.symbol svg {
+  width: 25px;
+  height: 25px;
+}
+
+.company .symbol {
+  color: #a7ff28;
+  background: rgba(167, 255, 40, 0.12);
+}
+
+.ig .symbol {
+  color: #f46ca5;
+  background: rgba(244, 108, 165, 0.12);
+}
+
+.web .symbol {
+  color: #6dbbff;
+  background: rgba(109, 187, 255, 0.12);
+}
+
+.wa .symbol {
+  color: #25d366;
+  background: rgba(37, 211, 102, 0.12);
+}
+
+/* Link text */
+
+.info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.info strong {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.info small {
+  color: #a9b5c0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.arrow {
+  color: #8c9aa8;
+  font-size: 22px;
+  font-weight: 700;
+  transition: transform 0.25s ease;
+}
+
+.link-card:hover .arrow {
+  color: #a7ff28;
+  transform: translate(3px, -3px);
+}
+
+/* Footer */
+
+footer {
+  margin-top: 30px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #73808d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px 12px;
+    align-items: flex-start;
+  }
+
+  .panel {
+    padding: 30px 18px 20px;
+    border-radius: 23px;
+  }
+
+  .avatar-frame {
+    width: 112px;
+    height: 112px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .link-card {
+    padding: 12px 13px;
+    gap: 12px;
+    min-height: 72px;
+  }
+
+  .symbol {
+    width: 44px;
+    height: 44px;
+  }
+
+  .info strong {
+    font-size: 14px;
+  }
+
+  .info small {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-card,
+  .arrow {
+    transition: none;
+  }
+}
